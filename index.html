@@ -25,6 +25,26 @@ function myFunction(){
   document.getElementById("demo").innerHTML = add();
 }
 </script>
+<p>Multiplier with a local variable.</p>
 
+<button type="button" onclick="myFunction1()">Double!</button>
+
+<p id="demo1">0</p>
+
+<script>
+function makeMultiplier (multiplierInit) {
+return (
+	function() {
+    	return multiplierInit*2;
+    }
+  )
+}
+
+var double = makeMultiplier(1);
+
+function myFunction(){
+  document.getElementById("demo").innerHTML = double();
+}
+</script>
 </body>
 </html>
